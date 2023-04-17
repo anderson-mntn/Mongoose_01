@@ -56,7 +56,7 @@ db.once("open", () => {
         try{
             //verificar se coincide com algum objeto 
             let doc = await Link.findOne({title})
-            res.send(doc.url);
+            res.redirect(doc.url);
 
         } catch (error){
             res.send(error);
