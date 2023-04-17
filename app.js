@@ -21,12 +21,16 @@ let link = new Link({
     url: "twitter.com/cidcidoso"
 });
 
-link.save().then(linkDoc =>{
-    console.log(linkDoc);
-}).catch(err=>{
-    console.log(err);
-});
+// link.save().then(linkDoc =>{
+//     console.log(linkDoc);
+// }).catch(err=>{
+//     console.log(err);
+// });
 // o mongoose pluraliza no momento de salvar no db
+
+
+
+
 
 // ------ mongoose conect ------
 
@@ -40,10 +44,29 @@ mongoose.connect('mongodb://127.0.0.1/links', {
 let db = mongoose.connection;
 
 db.on("error", () => console.log("houve um erro"));
-db.once("open", () => {console.log("db carregado!")})
+db.once("open", () => {
+    console.log("db carregado!");
+
+    // tentar buscar algum objeto (link)
+    // ler quando o usuario fizer a req
+    app.get('/:title', async (req, res)=>{
+
+        let title = req.params.title;
+
+        try{
+            //verificar se coincide com algum objeto 
+            let doc = await Link.findOne({title})
+            res.send(doc.url);
+
+        } catch (error){
+            res.send(error);
+        } 
+    })
+
+})
 
 
-// ------ app ------- 122
+// ------ app ------- 
 
 app.get('/', (req,res) => res.send('Hello world!'))
 
