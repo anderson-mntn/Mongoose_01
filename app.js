@@ -16,8 +16,8 @@ const linkSchema = new mongoose.Schema({
 const Link = mongoose.model('Link', linkSchema) // 'Link' vai ser o nome da coleção
 
 let link = new Link({
-    title: "twitter",
-    description: "twitter do canal",
+    title: "twitter_do_cid",
+    description: "twitter do canal do caloteiro",
     url: "twitter.com/cidcidoso"
 });
 
@@ -54,7 +54,7 @@ db.once("open", () => {
         let title = req.params.title;
 
         try{
-            //verificar se coincide com algum objeto 
+            //verificar se coincide com algum objeto / find/findOne
             let doc = await Link.findOne({title})
             res.redirect(doc.url);
 
