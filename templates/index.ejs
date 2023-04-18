@@ -7,7 +7,7 @@
     <title>Redirection</title>
 </head>
 <body>
-    <h3>Save your links! =&rpar;</h3>
+    <h2>Save your link</h2>
 
     <!-- Para onde queremos enviar a req, o att name é importante
     / Remover required para mostrar mensagem de error -->
@@ -15,8 +15,11 @@
         <input class="field-input" type="text" name="title"  placeholder="title" required value="<%= body.title %>"/> 
         <input class="field-input" type="text" name="description" placeholder="description" required  value="<%= body.description %>"/> 
         <input class="field-input" type="text" name="url"  placeholder="url" required value="<%= body.url %>"/> 
-        <button>Salvar</button>
+        <button>Save</button>
     </form>
+
+    <h2><a href="/">All Links</a></h2>
+    
 
     <% if(error){ %>
        <h3><%=error.message%></h3> 

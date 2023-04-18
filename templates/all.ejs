@@ -7,7 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-
+    <h2>All Saved Links</h2>
+    <p><a href="/add">Add new link</a></p>
     <% for(let i = 0; i < links.length; i++){ %>
         <div id="<%=links[i]._id%>">
             <h2><%=links[i].title%></h2>
@@ -16,6 +17,9 @@
             <button onclick="deletarLink('<%=links[i]._id%>')">Deletar</button>
         </div>
     <%}%>
+
+       
+
     <!--    
         - DeletarLink(): 
         formulários só podem mandar metodos GET e POST,

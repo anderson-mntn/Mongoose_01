@@ -20,7 +20,10 @@ const addLink = async (req, res) =>{
     try{
         let doc = await link.save();
         // adicionando link clicavel e texto setado pela descrição do usuário
-        res.send(`Link saved successfully <a href="${doc.url}"> ${doc.description} </a>`);
+        //res.send(`Link saved successfully <a href="${doc.url}"> ${doc.description} </a>`);
+
+        res.redirect('/')
+
     } catch(error){
         res.render('index', {error, body: req.body});
     } 
@@ -48,7 +51,8 @@ const deleteLink = async (req, res) =>{
     try{
       // Link.deleteOne({_id:id}) // Link.deleteOne({{"condição para deletar"}) 
        await Link.findByIdAndDelete(id);
-       res.send(id)
+       res.send(id) // Podemos substituir por res.redirect('/');
+
     } catch(error){
         res.status(404).send(error);
     }
