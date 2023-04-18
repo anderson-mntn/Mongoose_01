@@ -22,7 +22,7 @@ const addLink = async (req, res) =>{
         // adicionando link clicavel e texto setado pela descrição do usuário
         res.send(`Link saved successfully <a href="${doc.url}"> ${doc.description} </a>`);
     } catch(error){
-        res.render('index', {error});
+        res.render('index', {error, body: req.body});
     } 
 }
 

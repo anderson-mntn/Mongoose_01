@@ -9,11 +9,11 @@
 <body>
     <h3>Salve your links! =&rpar;</h3>
 
-    <!-- Para onde queremos enviar a req, o att name é imporante -->
+    <!-- Para onde queremos enviar a req, o att name é importante -->
     <form action="/" method="POST">
-        <input class="field-input" type="text" name="title"  placeholder="title"> 
-        <input class="field-input" type="text" name="description" placeholder="description"> 
-        <input class="field-input" type="text" name="url"  placeholder="url"> 
+        <input class="field-input" type="text" name="title"  placeholder="title" value="<%= body.title %>"/> 
+        <input class="field-input" type="text" name="description" placeholder="description" value="<%= body.description %>"/> 
+        <input class="field-input" type="text" name="url"  placeholder="url" value="<%= body.url %>"/> 
         <button>Salvar</button>
     </form>
 
