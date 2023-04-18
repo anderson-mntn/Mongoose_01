@@ -20,11 +20,17 @@
         - DeletarLink(): 
         formulários só podem mandar metodos GET e POST,
         para mandar um DELETE, usaremos fetch, no button click
+
+        -- tambem podemos usar o method-override, para não precisar usar fetch,
+        assim passando method post no nosso form
+        - Pesquisar no google por: method_override // express e seguir o passo a passo.
+        no router.delete podemos tirar o express.json(), adicionar router.use(methodOverride('_method'))
+
     -->
 
     <script>
         function deletarLink(id){
-            fetch('/' + id + "a", {method: 'DELETE'}) // id forçando a rota
+            fetch('/' + id, {method: 'DELETE'}) // id forçando a rota
             .then(res=>{
                 
                 if(res.status == 200){
