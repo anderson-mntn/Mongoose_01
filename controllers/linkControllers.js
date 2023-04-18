@@ -50,7 +50,7 @@ const deleteLink = async (req, res) =>{
        await Link.findByIdAndDelete(id);
        res.send(id)
     } catch(error){
-        res.send(error);
+        res.status(404).send(error);
     }
 }
 
