@@ -13,7 +13,7 @@
     / Remover required para mostrar mensagem de error -->
     <form action="/" method="POST">
         <input class="field-input" type="text" name="title"  placeholder="title" required value="<%= body.title %>"/> 
-        <input class="field-input" type="text" name="description" placeholder="description" value="<%= body.description %>"/> 
+        <input class="field-input" type="text" name="description" placeholder="description" required  value="<%= body.description %>"/> 
         <input class="field-input" type="text" name="url"  placeholder="url" required value="<%= body.url %>"/> 
         <button>Salvar</button>
     </form>
