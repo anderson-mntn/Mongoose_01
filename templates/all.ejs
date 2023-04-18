@@ -24,7 +24,9 @@
         -- tambem podemos usar o method-override, para não precisar usar fetch,
         assim passando method post no nosso form
         - Pesquisar no google por: method_override // express e seguir o passo a passo.
-        no router.delete podemos tirar o express.json(), adicionar router.use(methodOverride('_method'))
+        no router.delete podemos trocar o express.json() para urlencoded,
+        adicionar router.use(methodOverride('_method')).
+        - E no controller adicionar res.redirect('/all') para recarregar página ao deletar um item
 
     -->
 
