@@ -36,6 +36,17 @@ const showAllSavedLinks = async (req, res) =>{
     } 
 }
 
+const deleteLink = async (req, res) =>{
+
+    let linkId = req.params.id;
+
+    try{
+      // Link.deleteOne({_id:id}) // Link.deleteOne({{"condição para deletar"}) 
+       res.send(await Link.findByIdAndDelete(linkId));
+    } catch(error){
+        res.send(error);
+    }
+}
 
 
-module.exports = {redirect, Link, addLink, showAllSavedLinks} //pode ter outras funções aqui dentro
+module.exports = {redirect, Link, addLink, showAllSavedLinks, deleteLink} //pode ter outras funções aqui dentro
