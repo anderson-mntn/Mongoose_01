@@ -11,10 +11,14 @@
 
     <!-- Para onde queremos enviar a req, o att name é imporante -->
     <form action="/" method="POST">
-        <input class="field-input" type="text" name="title" required placeholder="title"> 
+        <input class="field-input" type="text" name="title"  placeholder="title"> 
         <input class="field-input" type="text" name="description" placeholder="description"> 
-        <input class="field-input" type="text" name="url" required placeholder="url"> 
+        <input class="field-input" type="text" name="url"  placeholder="url"> 
         <button>Salvar</button>
     </form>
+
+    <% if(error){ %>
+       <h3><%=error.message%></h3> 
+    <% } %>
 </body>
 </html>

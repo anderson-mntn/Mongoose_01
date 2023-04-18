@@ -9,7 +9,7 @@ const linkController = require('../controllers/linkControllers')
 // se existir ele retorna o link com ele
 router.get('/:title', linkController.redirect) 
 
-router.get('/', (req,res) => res.render('index'));
+router.get('/', (req,res) => res.render('index', {error: false}));
 
 router.post('/', express.urlencoded({extended: true}), linkController.addLink);
 

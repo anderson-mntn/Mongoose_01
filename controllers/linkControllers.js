@@ -20,10 +20,10 @@ const addLink = async (req, res) =>{
     try{
         let doc = await link.save();
         // adicionando link clicavel e texto setado pela descrição do usuário
-        res.send(`<a href="${doc.url}"> ${doc.description} </a>`);
+        res.send(`Link saved successfully <a href="${doc.url}"> ${doc.description} </a>`);
     } catch(error){
-        res.send(error);
-    }
+        res.render('index', {error});
+    } 
 }
 
 module.exports = {redirect, Link, addLink} //pode ter outras funções aqui dentro
