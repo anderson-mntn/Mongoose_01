@@ -2,16 +2,17 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 const mongoose = require('mongoose');
-mongoose.set("strictQuery", true);
 const path = require('path')
 
 
 const linkRoute = require('./routes/linkRoute');
 
+
 mongoose.connect('mongodb://127.0.0.1/links', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
+mongoose.set("strictQuery", true);
 
 let db = mongoose.connection;
 

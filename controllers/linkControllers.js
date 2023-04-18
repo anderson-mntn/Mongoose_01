@@ -38,16 +38,17 @@ const showAllSavedLinks = async (req, res) =>{
 
 const deleteLink = async (req, res) =>{
 
-    let linkId = req.params.id;
+    let id = req.params.id;
     
     // pegando um identificador caso id nao exista
-    if(!linkId){
-        linkId = req.body.id;
+    if(!id){
+        id = req.body.id;
     }
 
     try{
       // Link.deleteOne({_id:id}) // Link.deleteOne({{"condição para deletar"}) 
-       res.send(await Link.findByIdAndDelete(linkId));
+       await Link.findByIdAndDelete(id);
+       res.send(id)
     } catch(error){
         res.send(error);
     }

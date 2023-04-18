@@ -13,8 +13,26 @@
             <h2><%=links[i].title%></h2>
             <div><%=links[i].description%></div>
             <div><%=links[i].url%></div>
+            <button onclick="deletarLink('<%=links[i]._id%>')">Deletar</button>
         </div>
     <%}%>
-    
+    <!--    
+        - DeletarLink(): 
+        formulários só podem mandar metodos GET e POST,
+        para mandar um DELETE, usaremos fetch, no button click
+    -->
+
+    <script>
+        function deletarLink(id){
+            fetch('/' + id, {method: 'DELETE'}) // id forçando a rota
+            .then(res=>{
+                res.text().then(linkId=>{
+                    console.log(linkId);
+                    document.getElementById(linkId).remove();
+                })
+            })
+        }  
+    </script>
+
 </body>
 </html>
