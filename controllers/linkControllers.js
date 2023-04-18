@@ -19,7 +19,8 @@ const addLink = async (req, res) =>{
 
     try{
         let doc = await link.save();
-        res.send(doc);
+        // adicionando link clicavel e texto setado pela descrição do usuário
+        res.send(`<a href="${doc.url}"> ${doc.description} </a>`);
     } catch(error){
         res.send(error);
     }
