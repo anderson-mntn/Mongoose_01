@@ -26,4 +26,16 @@ const addLink = async (req, res) =>{
     } 
 }
 
-module.exports = {redirect, Link, addLink} //pode ter outras funções aqui dentro
+const showAllSavedLinks = async (req, res) =>{
+
+    try{
+        let links = await Link.find({});
+        res.render('all', {links})
+    } catch(error){
+        res.send(error);
+    } 
+}
+
+
+
+module.exports = {redirect, Link, addLink, showAllSavedLinks} //pode ter outras funções aqui dentro
