@@ -3,21 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Link edit</title>
 </head>
-<body>
-    <h2>Edit your link</h2>
+<body class="d-flex flex-column">
+    <h2 class="mx-auto my-4">Edit your link</h2>
 
-    <!-- Precisaremos de uma rota com GET (renderizar a pagina) e uma de POST(atualizar de fato) -->
-    <form action="/edit/<%=body.id%>" method="POST">
-        <input class="field-input" type="text" name="title"  placeholder="title" required value="<%= body.title %>" /> 
-        <input class="field-input" type="text" name="description" placeholder="description" required  value="<%= body.description %>"/> 
-        <input class="field-input" type="text" name="url"  placeholder="url" required value="<%= body.url %>"/> 
-        <button>Edit</button>
-    </form>
+    <div class="container w-1">
+        <!-- Precisaremos de uma rota com GET (renderizar a pagina) e uma de POST(atualizar de fato) -->
+        <form action="/edit/<%=body.id%>" method="POST">
 
-    <h2><a href="/">All Links</a></h2>
+           
+            <label class="form-label" for="form3Example1">Title</label>
+            <input class="field-input form-control" type="text" name="title"  placeholder="title" required value="<%= body.title %>" /> 
+            
+            <label class="form-label mt-3" for="form3Example1">Description</label>
+            <input class="field-input form-control" type="text" name="description" placeholder="description" required  value="<%= body.description %>"/> 
+           
+            <label class="form-label mt-3" for="form3Example1">Url</label>
+            <input class="field-input form-control" type="text" name="url"  placeholder="url" required value="<%= body.url %>"/> 
+
+            <button class="btn btn-primary my-4">Save</button>
+        </form>
+    </div>
+
+    <h3 class="mx-auto"><a href="/">All Links</a></h3>
     
     <% if(error){ %>
        <h3><%=error.message%></h3> 
