@@ -15,8 +15,11 @@
             <div><%=links[i].description%></div>
             <div><%=links[i].url%></div>
             <button onclick="deletarLink('<%=links[i]._id%>')">Deletar</button>
+            <a href="/edit/<%=links[i]._id%>">Edit</a>
         </div>
     <%}%>
+
+    
 
        
 

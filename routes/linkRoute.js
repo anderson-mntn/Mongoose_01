@@ -16,6 +16,11 @@ router.get('/add', (req, res) => res.render('index', {error: false, body: {}}));
 // se existir ele retorna o link com ele
 router.get('/:title', linkController.redirect) 
 
+// action do form de edit.ejs
+router.get('/edit/:id', linkController.loadLink);
+
+router.post('/edit/:id',  express.urlencoded({extended: true}), linkController.editLink)
+
 
 router.post('/', express.urlencoded({extended: true}), linkController.addLink);
 
