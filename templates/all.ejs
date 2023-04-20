@@ -11,23 +11,24 @@
     <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body class="p-4">
-    <div class="container col p-2 " >
-        <div class="col mx-3">
-            <h2 class="row">All Saved Links</h2>
-            <p class="row"><a href="/add">Add new link</a></p>
-        </div>
-        <div class="col w-50">
+    <div class="container" >
+        
+        <h2>All Saved Links</h2>
+        <p><a href="/add">Add new link</a></p>
+        <div class="w-50 ">
             <% for(let i = 0; i < links.length; i++){ %>
-                <div id="<%=links[i]._id%>" class="card d-flex flex-row px-1">
-                
-                    <div class="card-body w-auto">
-                        <h3 class="card-title"><%=links[i].title%></h3>
-                        <div class="card-text"><%=links[i].description%></div>
-                        <div class="card-text"><%=links[i].url%></div>
-                    </div>
-                    <div class="d-flex flex-column justify-content-center align-items-center">
-                        <button class="btn btn-danger mb-1"  onclick="deletarLink('<%=links[i]._id%>')">Deletar</button>
-                        <a href="/edit/<%=links[i]._id%>" ><button class="btn btn-primary text-light w-100" >Edit</button></a> 
+                <div id="<%=links[i]._id%>" class="card my-2 p-2 ">
+                    <div class="d-flex justify-content-between align-items-center" >
+                        <div class="d-flex flex-column border-right w-100 ">
+                            <h3 class="card-title"><%=links[i].title%></h3>
+                            <div class="card-text"><%=links[i].description%></div>
+                            <div class="card-text"><a href="<%=links[i].url%>"><%=links[i].url%></a></div>
+                        </div>
+                        <div class="pl-4 d-flex flex-column justify-content-center align-items-center">
+                            <a href="/edit/<%=links[i]._id%>" class="mb-1 btn btn-primary text-light w-100">Edit</a>
+                            <button class="btn btn-danger "  onclick="deletarLink('<%=links[i]._id%>')">Deletar</button>
+                            
+                        </div>
                     </div>
                 </div>
                 
