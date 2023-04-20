@@ -9,7 +9,7 @@ const linkController = require('../controllers/linkControllers');
 router.get('/', linkController.showAllSavedLinks)
 
 // prestar atenção para não ter rotas de buscas acima das configuradas.
-router.get('/add', (req, res) => res.render('index', {error: false, body: {}}));
+router.get('/add', (req, res) => res.render('add', {error: false, body: {}}));
 
 // E passamos qual metodo queremos usar quando a res for atendida
 // Verifica se existe algum objeto no db com o title igual ao que foi passado, 

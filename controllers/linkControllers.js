@@ -25,7 +25,7 @@ const addLink = async (req, res) =>{
         res.redirect('/')
 
     } catch(error){
-        res.render('index', {error, body: req.body});
+        res.render('add', {error, body: req.body});
     } 
 }
 

@@ -16,16 +16,18 @@
             <h2 class="row">All Saved Links</h2>
             <p class="row"><a href="/add">Add new link</a></p>
         </div>
-        <div class="row px-3">
+        <div class="col px-2 w-50">
             <% for(let i = 0; i < links.length; i++){ %>
-                <div id="<%=links[i]._id%>" class="card w-50% m-1">
+                <div id="<%=links[i]._id%>" class="card d-flex flex-row">
                 
-                    <div class="card-body p-2 m-2">
+                    <div class="card-body w-auto">
                         <h3 class="card-title"><%=links[i].title%></h3>
                         <div class="card-text"><%=links[i].description%></div>
-                        <div class="mb-2 text-justify overflow-hidden"><%=links[i].url%></div>
-                        <button class="btn btn-danger"  onclick="deletarLink('<%=links[i]._id%>')">Deletar</button>
-                        <a href="/edit/<%=links[i]._id%>"><button class="btn btn-primary text-light " >Edit</button></a> 
+                        <div class="mb-2  text-wrap"><%=links[i].url%></div>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <button class="btn btn-danger "  onclick="deletarLink('<%=links[i]._id%>')">Deletar</button>
+                        <a href="/edit/<%=links[i]._id%>" ><button class="btn btn-primary text-light" >Edit</button></a> 
                     </div>
                 </div>
                 
