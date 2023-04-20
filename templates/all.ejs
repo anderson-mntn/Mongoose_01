@@ -11,22 +11,27 @@
     <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body class="p-4">
-    <h2 class="">All Saved Links</h2>
-    <p><a href="/add">Add new link</a></p>
-
-    <% for(let i = 0; i < links.length; i++){ %>
-        
-    <div id="<%=links[i]._id%>" style="width: 20rem;" class="card my-2">
-    
-        <div class="card-body p-3">
-            <h2 class="card-title"><%=links[i].title%></h2>
-            <div class="card-text"><%=links[i].description%></div>
-            <div class="mb-2 text-justify"><%=links[i].url%></div>
-            <button class="btn btn-danger"  onclick="deletarLink('<%=links[i]._id%>')">Deletar</button>
-            <a href="/edit/<%=links[i]._id%>"><button class="btn btn-primary text-light " >Edit</button></a> 
+    <div class="container col p-2 " >
+        <div class="col mx-3">
+            <h2 class="row">All Saved Links</h2>
+            <p class="row"><a href="/add">Add new link</a></p>
+        </div>
+        <div class="row px-3">
+            <% for(let i = 0; i < links.length; i++){ %>
+                <div id="<%=links[i]._id%>" class="card w-50% m-1">
+                
+                    <div class="card-body p-2 m-2">
+                        <h3 class="card-title"><%=links[i].title%></h3>
+                        <div class="card-text"><%=links[i].description%></div>
+                        <div class="mb-2 text-justify overflow-hidden"><%=links[i].url%></div>
+                        <button class="btn btn-danger"  onclick="deletarLink('<%=links[i]._id%>')">Deletar</button>
+                        <a href="/edit/<%=links[i]._id%>"><button class="btn btn-primary text-light " >Edit</button></a> 
+                    </div>
+                </div>
+                
+            <%}%>
         </div>
     </div>
-    <%}%>
 
     
 
