@@ -54,23 +54,26 @@
 
     <script>
         function deletarLink(id){
-            fetch('/' + id, {method: 'DELETE'}) // id forçando a rota
-            .then(res=>{
-                
-                if(res.status == 200){
-                    res.text().then(linkId=>{
+            
+            let text = "Do you really want to DELETE link?";
+            if (confirm(text) == true){
+                fetch('/' + id, {method: 'DELETE'}) // id forçando a rota
+                    .then(res=>{      
+                        if(res.status == 200){
+                        res.text().then(linkId=>{
                         console.log(linkId);
                         document.getElementById(linkId).remove();
-                    })
-                } else {
-                    res.json().then(err=>{
+                    })} else {
+                        res.json().then(err=>{
                         console.log(err.message);
                         alert(err.message);
                     })
-                }
+                }});
                 
-            })
-        }  
+            }
+             
+        }
+        
     </script>
 
 </body>
