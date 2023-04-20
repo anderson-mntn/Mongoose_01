@@ -10,10 +10,10 @@
 </head>
 <body>
     
-    <div class="container w-1">
+    <div class="container">
         <h2 class="mx-auto my-4">Edit your link</h2>
         <!-- Precisaremos de uma rota com GET (renderizar a pagina) e uma de POST(atualizar de fato) -->
-        <form action="/edit/<%=body.id%>" method="POST">
+        <form action="/edit/<%=body.id%>" method="POST" class="w-50">
 
            
             <label class="form-label" for="form3Example1">Title</label>
@@ -27,7 +27,7 @@
 
             <button class="btn btn-primary my-4">Save</button>
         </form>
-        <h3 class="mx-auto"><a href="/">All Links</a></h3>
+        <h4 class="mx-auto"><a href="/">All Links</a></h4>
     </div>
 
     

@@ -9,12 +9,12 @@
 </head>
 <body>
 
-    <div class="container w-400">
+    <div class="container">
         <h2 class="mx-auto my-4">Add new link</h2>
         
         <!-- Para onde queremos enviar a req, o att name é importante
         / Remover required para mostrar mensagem de error -->
-        <form action="/" method="POST">
+        <form action="/" method="POST" class="w-50 align-items-center">
             <label class="form-label" for="form3Example1">Title</label>
             <input class="field-input form-control" type="text" name="title"  placeholder="title" required value="<%= body.title %>" /> 
             
@@ -23,10 +23,11 @@
            
             <label class="form-label mt-3" for="form3Example1">Url</label>
             <input class="field-input form-control" type="text" name="url"  placeholder="url" required value="<%= body.url %>"/> 
-            <button class="btn btn-primary my-4">Save</button>
+        
+            <button class="btn btn-primary my-4 align-self-center">Save</button>
 
         </form>
-        <h3><a href="/">All Links</a></h3>
+        <h4 class="mx-auto"><a href="/">All Links</a></h4>
     
 
     </div>
