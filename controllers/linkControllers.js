@@ -6,7 +6,7 @@ const redirect = async (req, res) =>{
 
     try{
         //verificar se coincide com algum objeto / find/findOne
-        let doc = await Link.findOne({title})
+        let doc = await Link.findOneAndUpdate({title}, {$inc:{click:1}});
         res.redirect(doc.url);
 
     } catch (error){
